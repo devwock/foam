@@ -9,7 +9,7 @@ python manage.py dumpdata -e contenttypes -e auth.Permission promotions --indent
 ## 프로젝트 단위 픽스쳐
 
 ```bash
-python manage.py dumpdata -e contenttypes -e auth.Permission --indent 4 > testapp/fixture/testapp-data.json
+python manage.py dumpdata -e contenttypes -e auth.Permission --indent 4 > waveby/fixture/waveby-data.json
 ```
 
 ## 픽스쳐 복원
