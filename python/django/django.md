@@ -7,6 +7,8 @@
 - [[celery beat]]
 - [[fixture]]
 - [[test]]
+- [[graphene]]
+- [[orm]]
 - [[share-model]]
 - [[bulk insert]]
 - [[excel import]]
@@ -20,6 +22,8 @@
 [celery beat]: celery-beat "샐러리 비트"
 [fixture]: fixture "Fixture"
 [test]: test "테스트"
+[graphene]: graphene/graphene "Graphen Django"
+[orm]: orm/orm "ORM"
 [share-model]: share-model "장고 모델 공유"
 [bulk insert]: bulk-insert "Bulk Insert"
 [excel import]: excel-import "Excel Import"
