@@ -1,2 +1,0 @@
-# Higher Order Function
-
