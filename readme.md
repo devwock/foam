@@ -1,3 +1,9 @@
+---
+title: Read M
+tags:
+  - Foam
+---
+
 <img src="attachments/foam-icon.png" width=100 align="left">
 
 # Foam
