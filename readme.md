@@ -6,7 +6,7 @@ tags:
 
 # Foam
 
-**👋 Welcome to your new Foam Knowledge Base!!**
+**👋 Welcome to your new Foam Knowledge Base!**
 
 ## Getting started
 
