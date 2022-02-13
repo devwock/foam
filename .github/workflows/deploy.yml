@@ -12,6 +12,7 @@ jobs:
         with:
           repository: ${{ github.repository_owner }}/devwock.github.io
           fetch-depth: 0
+          token: ${{secrets.PAT}}
       - run: |
           git config user.name ${{ github.actor }}
           git config user.email ${{ github.actor }}@users.noreplay.github.com
