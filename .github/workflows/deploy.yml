@@ -11,11 +11,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: ${{ github.repository_owner }}/devwock.github.io
-          path: main
           fetch-depth: 0
       - run: |
-          pwd
-          ls -al
           git config user.name ${{ github.actor }}
           git config user.email ${{ github.actor }}@users.noreplay.github.com
           git remote add foam ${{ github.repositoryUrl }}
