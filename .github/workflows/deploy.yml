@@ -1,0 +1,22 @@
+name: Deploy devwocky
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository_owner }}/devwock.github.io
+          path: main
+          fetch-depth: 0
+      - name: Update subtree
+        run: |
+          git config user.name ${{ github.actor }}
+          git config user.email ${{ github.actor }}@users.noreplay.github.com
+          git remote add foam ${{ github.repositoryUrl }}
+          git subtree pull --prefix foam foam main
+          git push
