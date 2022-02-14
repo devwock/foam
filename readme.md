@@ -21,6 +21,3 @@ publish: true
 - [Gatsby](https://www.gatsbyjs.com/)
 - [Foam](https://foambubble.github.io/foam/)
 - [Visual Studio Code](https://code.visualstudio.com/)
-
-테스트
-![테스트](attachment/image/img/2020-02-23-twitter-liked/CLVPyprUcAAIl0s.jpeg)
