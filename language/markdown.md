@@ -67,18 +67,13 @@ publish: true
 코드블럭
 ```
 
-## 주의
-
-**Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
-{: .notice}
-
 ## 이미지
 
 ```markdown
-![Smithsonian Image](../attachment/profile.jpg)
+![profile](../attachment/profile.jpg)
 ```
 
-![Smithsonian Image](../attachment/profile.jpg)
+![profile](../attachment/profile.jpg)
 
 ## 수평선
 
@@ -110,13 +105,10 @@ ___
 |:--------|:-------:|--------:|
 | cell 1   | cell 2   | cell 3   |
 | cell 4   | cell 5   | cell 6   |
-|----
-| cell 1   | cell 2   | cell 3   |
-| cell 4   | cell 5   | cell 6   |
-|=====
-| Foot 1   | Foot 2   | Foot 3   |
 
 ## 특정 제목으로 이동
+
+* 현재 템플릿에서 목차 이동 사용 불가
 
 ```markdown
 [마크다운](#markdown)
