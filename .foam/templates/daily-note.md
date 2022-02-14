@@ -1,5 +1,5 @@
 ---
-title: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DAY}
+title: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}
 summary: 
 categories:
     - 
