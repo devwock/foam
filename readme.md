@@ -19,5 +19,6 @@ publish: true
 
 - [Github Pages](https://pages.github.com/)
 - [Gatsby](https://www.gatsbyjs.com/)
+- [Gatsby Theme Primer Wiki](https://github.com/theowenyoung/gatsby-theme-primer-wiki)
 - [Foam](https://foambubble.github.io/foam/)
 - [Visual Studio Code](https://code.visualstudio.com/)
