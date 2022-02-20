@@ -44,7 +44,7 @@ E 튜닝을 스탠다드 튜닝이라고 함
 | CM7 | 1, 3, 5, 7 |
 | Cm7 | 1, 3b, 5, 7b |
 | CmM7 | 1, 3b, 5, 7 |
-| Cm^xb57 <br> Half diminish <br> Cø | 1, cb, 5b, 7 |
+| Cm^xb57 / Half diminish / Cø | 1, cb, 5b, 7 |
 | Cdim | 1, 3b, 5b, 7b |
 
 ### 연습
