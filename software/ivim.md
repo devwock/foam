@@ -132,7 +132,7 @@ iOS의 기능을 사용할 수 있는 명령어들이다.
 #### [폰트](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_commands.txt#L18)
 
 - `:ifo[nt]` 폰트 관리
-- `:idel[etefont] 폰트 삭제
+- `:idel[etefont]` 폰트 삭제
 
 #### [Share](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_commands.txt#L79)
 
