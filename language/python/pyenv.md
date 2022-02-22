@@ -1,0 +1,65 @@
+---
+title: pyenv
+summary: pyenv
+categories:
+    - 
+tags:
+    - language
+    - python
+    - 개발환경
+link: 
+publish: true
+---
+
+# pyenv
+
+`pyenv`는 파이썬의 버전관리를 해주는 유틸리티이다.
+
+`pyenv-virtualenv`와 함께 사용하면 파이썬 버전관리를 쉽게 할 수 있다.
+
+## pyenv 설치
+
+```zsh
+brew install pyenv
+```
+
+### pyenv 기본 옵션 설정 (Optional)
+
+해당 설정은 `pyenv init --path` 와 `pyenv init -`을 사용할 수 있게 해준다.
+
+```zsh
+echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+```
+
+## pyenv virtualenv
+
+`pyenv virtualenv`는 pyenv에서 `virtualenv`를 쓸 수 있게 해준다.
+
+### pyenv virtualenv 설치
+
+```zsh
+brew install pyenv-virtualenv
+```
+
+#### pyenv virtualenv 기본 옵션 설정 (Optional)
+
+해당 설정은 `pyenv virtualenv-init -`을 사용할 수 있게 해준다.
+
+```zsh
+eval "$(pyenv virtualenv-init -)"
+```
+
+## 사용법
+
+```zsh
+pyenv install 3.8.10
+pyenv virtualenv 3.8.10 <name>
+```
+
+설정 시 파이썬 `virtualenv`는 `~/.pyenv/versions/<name>`에 생성된다.
+
+## 링크
+
+- [pyenv](https://github.com/pyenv/pyenv)
+- [pyenv virtualenv](https://github.com/pyenv/pyenv-virtualenv)
