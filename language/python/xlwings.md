@@ -1,6 +1,6 @@
 ---
-title: XLwings를 개발 도구에서 시 권한 설정 방법
-summary: XLwings를 개발 도구에서 시 권한 설정 방법
+title: XLwings를 개발 도구에서 사용시 권한 설정 방법
+summary: XLwings를 개발 도구에서 사용시 권한 설정 방법
 categories:
     - 
 tags:

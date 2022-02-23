@@ -4,7 +4,7 @@ summary: Python Decimal 설정
 categories:
     - 
 tags:
-    - languate
+    - language
     - python
 link: 
 publish: true

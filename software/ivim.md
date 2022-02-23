@@ -5,7 +5,7 @@ categories:
     - 
 tags:
     - software
-    - iOS
+    - ios
     - vim
 link: https://github.com/terrychou/iVim
 publish: true
