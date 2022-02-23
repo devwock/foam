@@ -4,9 +4,9 @@ summary: SOLID 원칙
 categories:
     - 
 tags:
-    - computer-engineering
+    - "computer engineering"
     - paradigm
-    - object-oriented
+    - "object oriented"
 link: 
 publish: true
 ---
