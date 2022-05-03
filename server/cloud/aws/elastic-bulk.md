@@ -1,8 +1,7 @@
 ---
 title: ES Bulk API Create or Update
 summary: 
-categories:
-    - 
+categories
 tags:
     - aws
     - es
@@ -14,6 +13,6 @@ publish: true
 
 draft
 
-bulk action에서 `_op_type`을 create, update로 지정하고 `raise_on_error=False`로 지정하면 됨
+bulk action에서 `_op_type`을 `create`, `update`로 지정하고 `raise_on_error=False`로 지정하면 됨
 
 <https://stackoverflow.com/questions/49717535/elasticsearch-python-library-update-if-exist>
