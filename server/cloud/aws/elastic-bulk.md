@@ -1,7 +1,8 @@
 ---
 title: ES Bulk API Create or Update
 summary: 
-categories
+categories:
+    - 
 tags:
     - aws
     - es
