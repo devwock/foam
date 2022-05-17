@@ -4,7 +4,7 @@ summary:
 categories:
     - 
 tags:
-    - 
+    - django
 link: 
 publish: true
 ---
