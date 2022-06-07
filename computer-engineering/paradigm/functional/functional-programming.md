@@ -4,8 +4,8 @@ summary:
 categories:
     - 
 tags:
-    - 
-link: functional
+    - functional
+link: 
 publish: true
 ---
 
