@@ -1,12 +1,12 @@
 ---
-title: ${TM_FILENAME_BASE/(^\\w*)|(-)/${1:/capitalize}${2:+ }/g}
+title: ${TM_FILENAME_BASE/(\w+)|(-)/${1:/pascalcase}${2:+ }/g}
 summary: 
 categories:
     - 
 tags:
-    - 
+    - ${TM_DIRECTORY/^.+\\/(.*)$/$1/}
 link: 
 publish: true
 ---
-## ${TM_FILENAME_BASE/(^\\w*)|(-)/${1:/pascalcase}${2:+ }/g}
+## ${TM_FILENAME_BASE/(\w+)|(-)/${1:/pascalcase}${2:+ }/g}
 
