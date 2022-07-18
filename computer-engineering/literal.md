@@ -4,7 +4,7 @@ summary:
 categories:
     - 
 tags:
-    - compoter-engineering
+    - "computer engineering"
 link: 
 publish: true
 ---
