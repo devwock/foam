@@ -67,19 +67,17 @@ asdf global python 3.8.15
 
 #### 파이썬 버전 설정
 
-만일 파이썬을 글로벌하게 셋팅하지 않았으면 다음 명령어 사용
-
 ```shell
 asdf direnv local python 3.8.15
 ```
 
 #### 프로젝트 파이썬 .envrc 설정
 
-`.envrc`파일 생성 후 다음 내용 기입
+`.envrc` 파일 확인 후 다음 내용 기입
 
 ```shell
 use asdf
-layout python
+layout python # 이 부분 추가 필요
 ```
 
 ### nodejs
@@ -92,4 +90,4 @@ asdf install nodejs 16.13.2
 asdf global nodejs 16.13.2
 ```
 
-이후 동일
+이후 설정은 동일하다.
