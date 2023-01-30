@@ -4,7 +4,6 @@ summary:
 categories:
 tags:
     - service
-    - 
 publish: true
 ---
 # 오픈 뱅킹
