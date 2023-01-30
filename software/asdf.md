@@ -62,6 +62,12 @@ asdf global python 3.8.10
 
 #### 프로젝트 파이썬 .envrc 설정
 
+만일 파이썬을 글로벌하게 셋팅하지 않았으면 다음 명령어 사용
+
+```shell
+asdf direnv local python 3.8.15
+```
+
 ```shell
 use asdf
 layout python
