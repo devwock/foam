@@ -85,4 +85,4 @@ go run main.go
 | Variable | Value |
 | :- | :- |
 | Run Kind | File |
-| Files | <PRODUCT PATH>/main.go |
+| Files | `<PRODUCT PATH>/main.go` |
