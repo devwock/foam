@@ -56,17 +56,26 @@ source "$(asdf direnv hook asdf)"
 
 ```shell
 asdf plugin-add python
-asdf install python 3.8.10
-asdf global python 3.8.10
+asdf install python 3.8.15
+# 파이썬을 글로벌하게 사용하지 않으려면 다음 항목을 실행하지 않는다.
+asdf global python 3.8.15
 ```
 
-#### 프로젝트 파이썬 .envrc 설정
+### 프로젝트 설정
+
+프로젝트 폴더를 생성하여 내부로 이동한다.
+
+#### 파이썬 버전 설정
 
 만일 파이썬을 글로벌하게 셋팅하지 않았으면 다음 명령어 사용
 
 ```shell
 asdf direnv local python 3.8.15
 ```
+
+#### 프로젝트 파이썬 .envrc 설정
+
+`.envrc`파일 생성 후 다음 내용 기입
 
 ```shell
 use asdf
@@ -83,17 +92,4 @@ asdf install nodejs 16.13.2
 asdf global nodejs 16.13.2
 ```
 
-#### 프로젝트 nodejs .envrc 설정
-
-```shell
-use asdf
-layout node
-```
-
-### 해당 프로젝트에서 direnv 실행
-
-`.envrc` 설정 후 해당 폴더에 진입, 다음 명령어를 실행해 주어야 환경이 구축된다.
-
-```shell
-direnv allow
-```
+이후 동일
