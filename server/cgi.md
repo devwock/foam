@@ -4,7 +4,7 @@ summary:
 categories:
     - 
 tags:
-    - "web server"
+    - server
 publish: true
 ---
 # CGI
