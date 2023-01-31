@@ -4,7 +4,7 @@ summary:
 categories:
     - 
 tags:
-    - foam
+    - scm
 publish: true
 ---
 # Git Multiple Remote
