@@ -18,6 +18,7 @@ asdf는 통합 개발 환경 버전 관리자이다. 내부에서는 각 언어�
 
 ```shell
 brew install asdf
+echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
 ```
 
 ### direnv
@@ -28,26 +29,7 @@ brew install asdf
 
 ```shell
 asdf plugin-add direnv
-asdf install direnv latest
-asdf global direnv latest
-```
-
-#### `.zshrc`에 다음 항목 추가
-
-```shell
-. /usr/local/opt/asdf/asdf.sh
-eval "$(direnv hook zsh)"
-direnv() { asdf exec direnv "$@"; }
-```
-
-#### `~/.config/direnv/direnvrc` 파일 생성
-
-```shell
-# File: ~/.config/direnv/direnvrc
-source "$(asdf direnv hook asdf)"
-
-# Uncomment the following line to make direnv silent by default.
-# export DIRENV_LOG_FORMAT=""
+asdf direnv setup --shell zsh --version latest
 ```
 
 ### 파이썬
@@ -56,9 +38,7 @@ source "$(asdf direnv hook asdf)"
 
 ```shell
 asdf plugin-add python
-asdf install python 3.8.15
-# 파이썬을 글로벌하게 사용하지 않으려면 다음 항목을 실행하지 않는다.
-asdf global python 3.8.15
+asdf install python 3.8.16
 ```
 
 ### 프로젝트 설정
@@ -68,7 +48,7 @@ asdf global python 3.8.15
 #### 파이썬 버전 설정
 
 ```shell
-asdf direnv local python 3.8.15
+asdf direnv local python 3.8.16
 ```
 
 #### 프로젝트 파이썬 .envrc 설정
@@ -79,15 +59,3 @@ asdf direnv local python 3.8.15
 use asdf
 layout python # 이 부분 추가 필요
 ```
-
-### nodejs
-
-#### nodejs 플러그인 설치
-
-```shell
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 16.13.2
-asdf global nodejs 16.13.2
-```
-
-이후 설정은 동일하다.
