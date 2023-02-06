@@ -49,13 +49,5 @@ asdf install python 3.8.16
 
 ```shell
 asdf direnv local python 3.8.16
-```
-
-#### 프로젝트 파이썬 .envrc 설정
-
-`.envrc` 파일 확인 후 다음 내용 기입
-
-```shell
-use asdf
-layout python # 이 부분 추가 필요
+direnv allow
 ```
