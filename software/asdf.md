@@ -30,6 +30,9 @@ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
 ```shell
 asdf plugin-add direnv
 asdf direnv setup --shell zsh --version latest
+# direnv를 golbal에서 사용하도록 변경
+# 아래 명령어가 없으면 No version is set for command direnv 오류 계속 발생함
+asdf global direnv latest
 ```
 
 ### 파이썬
@@ -38,7 +41,7 @@ asdf direnv setup --shell zsh --version latest
 
 ```shell
 asdf plugin-add python
-asdf install python 3.8.16
+asdf install python 3.10.10
 ```
 
 ### 프로젝트 설정
@@ -49,5 +52,19 @@ asdf install python 3.8.16
 
 ```shell
 asdf direnv local python 3.8.16
+```
+
+#### `.envrc` 편집
+
+```shell
+use asdf
+# 아래 라인 추가하면 .direnv 디렉토리에 venv를 생성함
+# 추가하지 않으면 .asdf에 설치된 파이썬을 돌려씀
+layout python
+```
+
+#### 파이썬 환경 적용
+
+```shell
 direnv allow
 ```
