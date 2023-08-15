@@ -1,11 +1,9 @@
 ---
 title: Django Imagekit
-summary: 
-categories:
-    - 
 tags:
     - django
-link: 
+links:
+    - https://django-imagekit.readthedocs.io/en/latest/
 publish: true
 ---
 
@@ -85,8 +83,7 @@ from imagekit.utils import get_cache
 get_cache().clear()
 ```
 
-이런 방법이 있긴 한데 정상적으로 동작하지 않음. 아마 메모리 내 캐시만 날리는듯?
-수동으로 파일 삭제하는게 가장 확실함
+이런 방법이 있긴 한데 정상적으로 동작하지 않음. 아마 메모리 내 캐시만 날리는 것 같다. 수동으로 파일 삭제하는게 가장 확실함.
 
 ## 주의
 
@@ -108,3 +105,5 @@ python manage.py migrate
 
 - [sorl-thumbnail](https://github.com/jazzband/sorl-thumbnail)
   - 키밸류 스토어를 사용해야함. memcached나 redis를 권장함
+- [django-versatileimagefield](https://django-versatileimagefield.readthedocs.io/en/latest/)
+  - DRF와 통합할 수 있음

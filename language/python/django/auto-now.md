@@ -1,15 +1,11 @@
 ---
-title: Auto Now
-summary: 
-categories:
-    - 
+title: Django Auto Now
 tags:
     - django
-link: 
 publish: true
 ---
 
-# Auto Now
+# Django Auto Now
 
 Django ORM에서 `models.DatetimeField`의 속성 중 `auto_now=True`를 설정할 경우, 매 `save()`시 날짜가 갱신된다.
 

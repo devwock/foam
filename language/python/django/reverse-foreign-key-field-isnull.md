@@ -1,15 +1,12 @@
 ---
 title: 역참조 ForeignKey isnull 필터링
-summary: 
-categories:
-    - 
 tags:
     - django
 link: 
 publish: true
 ---
 
-# Reverse ForeignKey Field isnull
+# Django Reverse ForeignKey Field isnull
 
 Django ORM에서 역참조 모델에 filter로 `Model.objects.filter(reverse_table1__reverse_table2__field__isnull=True)` 같이 역참조 필드에 `isnull`을 걸 경우, 실제 쿼리는 `LEFT OUTER JOIN reverse_table1`과 `LEFT OUTER JOIN reverse_table2`가 걸린다.  
 이렇게 되면 `reverse_table1`에 `table2`가 `null`이어도 값이 나오는 문제가 발생한다.

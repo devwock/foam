@@ -1,13 +1,11 @@
 ---
-title: Fixture
-summary: 
-categories:
-    - 
+title: Django Fixture 
 tags:
     - django
 publish: true
 ---
-## Fixture
+
+# Django Fixture
 
 ## 앱 단위 픽스쳐
 

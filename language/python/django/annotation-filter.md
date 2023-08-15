@@ -1,16 +1,12 @@
 ---
 title: Reverse Foreign Key 필터링 시 annotation subquery 필터와 역참조 필터 비교
-summary: 
-categories:
-    - 
 tags:
     - django
-    - orm
 link: 
 publish: true
 ---
 
-# Annotation Filter
+# Django Reverse Foreign Key Filter
 
 ## 개요
 
@@ -23,25 +19,24 @@ Django ORM에서 Reverse Foreign Key를 필터링 할 때 두가지 방법이 �
 
 ## 테이블 구조
 
-Product  
-- id: int
-
-ProductPromotion  
-- id: int
-- product_id: Product의 fk
-- product_promotion_type: string
+- Product
+  - id: int
+- ProductOption  
+  - id: int
+  - product_id: Product의 FK
+  - product_option_type: string
 
 ```mermaid
 erDiagram
     products_product {
         int id
     }
-    promotions_product_promotion {
+    products_product_option {
         int id
         int product_id
-        string product_promotion_type
+        string product_option_type
     }
-    products_product ||--o{ promotions_product_promotion : uses
+    products_product ||--o{ products_product_option : FK
 ```
 
 ## Reverse Foreign Exclude 필터링
@@ -79,10 +74,10 @@ WHERE
 
 ### Query Explain
 
-| id | select_type | table | partitions | type | possible_keys | key | key_len | ref | rows | filtered | Extra |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1 | PRIMARY | products_product | - | index | - | CENSORED | 5 | - | 9812 | 100 | Using where; Using index |
-| 2 | SUBQUERY | U1 | - | range | CENSORED,CENSORED | CENSORED | 258 | - | 181 | 50 | Using index condition; Using where |
+| id | select_type | table            | partitions | type  | possible_keys     | key      | key_len | ref | rows | filtered | Extra                              |
+|:---|:------------|:-----------------|:-----------|:------|:------------------|:---------|:--------|:----|:-----|:---------|:-----------------------------------|
+| 1  | PRIMARY     | products_product | -          | index | -                 | CENSORED | 5       | -   | 9812 | 100      | Using where; Using index           |
+| 2  | SUBQUERY    | U1               | -          | range | CENSORED,CENSORED | CENSORED | 258     | -   | 181  | 50       | Using index condition; Using where |
 
 ## `annotation`과 subquery를 이용한 exclude 필터링
 
@@ -91,14 +86,14 @@ WHERE
 ```python
 Product.objects.annotate(
     _has_special_deal=Exists(
-        ProductPromotion.objects.filter(product_id=OuterRef('id')).filter(
-            product_promotion_type__in=('TYPE_1','TYPE_2')
+        ProductOption.objects.filter(product_id=OuterRef('id')).filter(
+            product_option_type__in=('TYPE_1','TYPE_2')
         )
     )
 ).filter(_has_special_deal=False)
 ```
 
-### SQL
+### SubQuery SQL
 
 ```sql
 SELECT
@@ -129,14 +124,14 @@ WHERE
 ;
 ```
 
-### Query Explain
+### SuqQuery Explain
 
-| id | select_type | table | partitions | type | possible_keys | key | key_len | ref | rows | filtered | Extra |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1 | PRIMARY | products_product | - | index | - | CENSORED | 5 | - | 9812 | 100 | Using index |
-| 1 | PRIMARY | subquery3 | - | eq_ref | auto_distinct_key | auto_distinct_key | 5 | CENSORED.products_product.id | 1 | 100 | Using where; Not exists |
-| 3 | MATERIALIZED | U0 | - | ALL | CENSORED,CENSORED | - |  | - | 31813 | 100 | Using where |
-| 2 | DEPENDENT SUBQUERY | U0 | - | ref | CENSORED,CENSORED | CENSORED | 5 | CENSORED.products_product.id | 4 | 1.11 | Using where |
+| id | select_type        | table            | partitions | type   | possible_keys     | key               | key_len | ref                          | rows  | filtered | Extra                   |
+|:---|:-------------------|:-----------------|:-----------|:-------|:------------------|:------------------|:--------|:-----------------------------|:------|:---------|:------------------------|
+| 1  | PRIMARY            | products_product | -          | index  | -                 | CENSORED          | 5       | -                            | 9812  | 100      | Using index             |
+| 1  | PRIMARY            | subquery3        | -          | eq_ref | auto_distinct_key | auto_distinct_key | 5       | CENSORED.products_product.id | 1     | 100      | Using where; Not exists |
+| 3  | MATERIALIZED       | U0               | -          | ALL    | CENSORED,CENSORED | -                 |         | -                            | 31813 | 100      | Using where             |
+| 2  | DEPENDENT SUBQUERY | U0               | -          | ref    | CENSORED,CENSORED | CENSORED          | 5       | CENSORED.products_product.id | 4     | 1.11     | Using where             |
 
 ## 결론
 

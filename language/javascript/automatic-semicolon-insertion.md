@@ -1,11 +1,7 @@
 ---
 title: Automatic Semicolon Insertion
-summary: 
-categories:
-    - 
 tags:
     - javascript
-link: 
 publish: true
 ---
 

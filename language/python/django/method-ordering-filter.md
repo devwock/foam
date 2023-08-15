@@ -1,19 +1,16 @@
 ---
 title: 장고 필터 OrderingFilter에 커스텀 메소드 삽입
-summary: 
-categories:
-    - 
 tags:
     - django
 link: 
 publish: true
 ---
 
-# Method Ordering Filter
+# Django Method Ordering Filter
 
-`django_filter.OrderingFilter`는 모델 내 필드를 정렬할 수 있지만, 커스텀 로직을 삽입할 수 없다.
+`django_filter.OrderingFilter`는 모델 내 필드를 정렬할 수 있지만, 커스텀을 삽입할 수 없다.
 
-다음 방법을 사용하면 OrderingFilter 시 커스텀 로직을 삽입할 수 있다.
+다음 방법을 사용하면 OrderingFilter 시 커스텀 로직을 삽입하여 annotate로 정렬을 할 수 있다.
 
 ## 구현
 
@@ -36,14 +33,16 @@ class MethodOrderingFilter(OrderingFilter):
         if value in EMPTY_VALUES:
             return qs
         ordering = [self.get_ordering_value(param) for param in value]
-        if self.method_map is not None:
-            for ordering_item in ordering:
-                if ordering_item[0] == '-':
-                    ordering_item = ordering_item[1:]
-                snake_item = camel_to_underscore(ordering_item)
-                method = self.method_map.get(snake_item)
-                if method is not None:
-                    qs = method(self, qs)
+        if not self.method_map:
+            return qs.order_by(*ordering)
+
+        for ordering_item in ordering:
+            if ordering_item[0] == '-':
+                ordering_item = ordering_item[1:]
+            snake_item = camel_to_underscore(ordering_item)
+            method = self.method_map.get(snake_item)
+            if method is not None:
+                qs = method(self, qs)
         return qs.order_by(*ordering)
 ```
 
@@ -52,10 +51,10 @@ class MethodOrderingFilter(OrderingFilter):
 사용 시 다음과 같이 사용한다.
 
 ```python
-def queryset_approved_at(self, qs):
+def annotate_approved_at(self, qs):
     return qs.annotate(
         approvedAt=Max(
-            'status__status_histories__approved_at'
+            'model__model_m2m__approved_at'
         )
     )
 
@@ -65,9 +64,9 @@ order_by = MethodOrderingFilter(
     ),
     # 반드시 맵으로 사용할 것
     field_methods={
-        'approved_at': queryset_approved_at,
+        'approved_at': order_by_approved_at,
     },
 )
 ```
 
-`queryset_approved_at` 내부에서 커스텀 로직을 정한 뒤, `MethodOrderingFilter`내에서 `field_methods`로 호출한다.
+`annotate_approved_at` 내부에서 커스텀 로직을 정한 뒤, `MethodOrderingFilter`내에서 `field_methods`로 호출한다.
