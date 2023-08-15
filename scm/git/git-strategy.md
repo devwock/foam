@@ -1,8 +1,5 @@
 ---
 title: Git Strategy
-summary: 
-categories:
-    - 
 tags:
     - git
 publish: true

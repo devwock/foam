@@ -1,12 +1,7 @@
 ---
-title: 마크다운 및 플러그인 테스트
-summary: 마크다운 및 플러그인 테스트
-categories:
-    - 
+title: 마크다운
 tags:
     - language
-    - markdown
-link: 
 publish: true
 ---
 
@@ -74,14 +69,14 @@ ___
 
 ### 텍스트 꾸미기
 
-| Markdown | 결과 |
-|:--------|:-------:|
-|`**강조**`|**강조**|
-|`__강조__`|__강조__|
-|`*기울임*`|*기울임*|
-|`_기울임_`|_기울임_|
-|`_**강조기울임**_`|_**강조기울임**_|
-|`~~취소선~~`|~~취소선~~|
+| Markdown       |     결과       |
+|:---------------|:-------------:|
+| `**강조**`       |   **강조**    |
+| `__강조__`       |   __강조__    |
+| `*기울임*`        |    *기울임*    |
+| `_기울임_`        |    _기울임_    |
+| `_**강조기울임**_` | _**강조기울임**_ |
+| `~~취소선~~`      |   ~~취소선~~    |
 
 ### 인용
 
@@ -161,16 +156,16 @@ ___
 ## 링크
 
 ```markdown
-[Google](https://google.com)
+[Google](https://google.com/)
 ```
 
-[Google](https://google.com)
+[Google](https://google.com/)
 
 ```markdown
-<https://google.com>
+<https://google.com/>
 ```
 
-<https://google.com>
+<https://google.com/>
 
 ## 특정 제목으로 이동
 
@@ -195,7 +190,7 @@ TODO
 
 [^1]: 마크다운 주석입니다. [마크다운 문법 확인](https://github.com/DavidAnson/markdownlint/blob/v0.18.0/doc/Rules.md)
 
-<!-- ## LaTeX (MathJax)
+## LaTeX (MathJax)
 
 [MathJax](https://www.mathjax.org/)
 
@@ -209,7 +204,7 @@ $$
 \lim_{x\to 0}{\frac{e^x-1}{2x}}
 \overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}}
 \lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}
-$$ -->
+$$
 
 <!-- ## Github (github-embed)
 
@@ -309,107 +304,10 @@ $$ -->
 
 [Mermaid](https://mermaid-js.github.io/mermaid/#/)
 
-### 플로우차트
-
 ```mermaid
 graph TD;
   A-->B;
   A-->C;
   B-->D;
   C-->D;
-```
-
-### 시퀀스 다이어그램
-
-```mermaid
-sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice->>John: Hello John, how are you?
-  loop Healthcheck
-      John->>John: Fight against hypochondria
-  end
-  Note right of John: Rational thoughts <br/>prevail!
-  John-->>Alice: Great!
-  John->>Bob: How about you?
-  Bob-->>John: Jolly good!
-```
-
-### 간트 차트
-
-```mermaid
-gantt
-  dateFormat  YYYY-MM-DD
-  title Adding GANTT diagram to mermaid
-  excludes weekdays 2014-01-10
-
-  section A section
-  Completed task            :done,    des1, 2014-01-06,2014-01-08
-  Active task               :active,  des2, 2014-01-09, 3d
-  Future task               :         des3, after des2, 5d
-  Future task2               :         des4, after des3, 5d
-```
-
-### 클래스 다이어그램
-
-```mermaid
-classDiagram
-  Class01 <|-- AveryLongClass : Cool
-  Class03 *-- Class04
-  Class05 o-- Class06
-  Class07 .. Class08
-  Class09 --> C2 : Where am i?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorilla
-  Class08 <--> C2: Cool label
-```
-
-### Git 그래프
-
-```mermaid
-gitGraph:
-  options
-  {
-      "nodeSpacing": 150,
-      "nodeRadius": 10
-  }
-  end
-  commit
-  branch newbranch
-  checkout newbranch
-  commit
-  commit
-  checkout master
-  commit
-  commit
-  merge newbranch
-```
-
-### 스테이트 다이어그램
-
-```mermaid
-stateDiagram
-  [*] --> Still
-  Still --> [*]
-  %% this is a comment
-  Still --> Moving
-  Moving --> Still %% another comment
-  Moving --> Crash
-  Crash --> [*]
-```
-
-### 파이 차트
-
-```mermaid
-pie
-  title Key elements in Product X
-  "Calcium" : 42.96
-  "Potassium" : 50.05
-  "Magnesium" : 10.01
-  "Iron" :  5
 ```

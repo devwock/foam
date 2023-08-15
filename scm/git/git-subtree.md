@@ -1,12 +1,11 @@
 ---
 title: Git Subtree
-summary: 
-categories:
-    - 
+ 
 tags:
     - git
 publish: true
 ---
+
 # Git Subtree
 
 git에서 하위 경로를 다른 리포지토리로 분산하는 방법 중 `subtree`에 대해 설명한다.

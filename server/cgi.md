@@ -1,12 +1,10 @@
 ---
 title: CGI
-summary: 
-categories:
-    - 
 tags:
     - server
 publish: true
 ---
+
 # CGI
 
 ## CGI 개요

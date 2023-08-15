@@ -1,12 +1,11 @@
 ---
 title: Gopath
-summary: 
-categories:
-    - 
 tags:
+    - languate
     - go
 publish: true
 ---
+
 # Gopath
 
 `$GOPATH`는 go의 패키지를 관리하는 폴더를 지정한다. (`node`의 `node_modules`와 같은 역할)

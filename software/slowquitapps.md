@@ -1,12 +1,8 @@
 ---
 title: SlowQuitApps
-summary: 맥에서 cmd + Q로 앱이 바로 닫히지 않게 해주는 유틸리티
-categories:
-    - 
 tags:
     - software
-    - mac
-link: 
+    - macOS
 publish: true
 ---
 
@@ -31,13 +27,9 @@ brew tap dteoh/sqa
 brea cask install slowquitapps
 ```
 
-<!-- ![Accessibility]({{ site.img }}/2020-03-16-slowquitapps/1.png) -->
-
 앱 실행 후 `System Preferences` - `Security & Privacy` - `Privacy` - `Accessibility`에서 `SlowQuitApps.app`을 체크 해 줘야한다.
 
 ## 앱 설정
-
-<!-- ![Dock Settings]({{ site.img }}/2020-03-16-slowquitapps/3.png) -->
 
 앱에서 건드릴 수 있는 설정은 단 세개밖에 없다.
 
@@ -114,4 +106,4 @@ defaults write com.dteoh.SlowQuitApps displayOverlay -bool NO
 
 ## 링크
 
-[깃허브](https://github.com/dteoh/SlowQuitApps)
+- <https://github.com/dteoh/SlowQuitApps>

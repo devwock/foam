@@ -1,10 +1,5 @@
 ---
 title: Git Hooks
-summary: Git Hooks 설정
-categories:
-    - 
-tags:
-    - scm
     - git
 link: 
 publish: true
@@ -12,7 +7,7 @@ publish: true
 
 # Git Hooks
 
-`Git Hook`은 특정 이벤트가 발생했을 때 자동으로 특정 스크립트를 실행할 수 있게 해준다.
+`Git Hook`은 특정 git 이벤트가 발생했을 때 자동으로 특정 스크립트를 실행할 수 있게 해준다.
 
 ## Client Hook
 

@@ -1,23 +1,24 @@
 ---
-title: Todo Plus
-summary: 
-categories:
-    - 
+title: Todo+
 tags:
-    - software
+    - 프로그램
 publish: true
 ---
-## Todo Plus
+# Todo+
 
-![TODO+](https://github.com/fabiospampinato/vscode-todo-plus/raw/master/resources/demo/syntax.png)
+![Todo+](https://github.com/fabiospampinato/vscode-todo-plus/raw/master/resources/demo/syntax.png)
 
 ## 개요
 
-업무 정리를 위해 몇가지 TODO 앱들을 왕창 깔아서 비교해 본적이 있었다. Notion, 원노트, Wunderlist, Microsoft TODO 등등등.
+업무 정리를 위해 몇가지 TODO 앱들을 왕창 깔아서 비교해 본적이 있었다. Notion, 원노트, Wunderlist, Microsoft TODO 등등등.  
+그런데 뭔가 성에 차지 않는 점이 몇개씩 있었다. 동선이 복잡하다던가, 무겁다던가, 키보드 단축키 지원이 미흡하다던가 등등.  
+결국 텍스트 기반 TODO 앱을 찾아 헤멨는데 결국 정착하게 된것이 VSCode의 확장 Todo+ 이다.
 
-그런데 뭔가 성에 차지 않는 점이 몇개씩 있었다. 동선이 복잡하다던가, 무겁다던가, 키보드 단축키 지원이 미흡하다던가 등등.
+## 요구사항
 
-결국 텍스트 기반 TODO 앱을 찾아 떠나게 되었는데 결국 정착하게 된것이 VSCode의 확장 TODO+ 이다.
+- 가벼울 것
+- 단축키 지원
+- 클라우드 연동
 
 ## Pros
 
@@ -28,24 +29,24 @@ publish: true
 
 ## Cons
 
-- 인터페이스가 투박함
+- 텍스트 기반이라 인터페이스가 투박함
 - 편의기능이 부족함
-- 모바일에서 바로 확인이 힘듦
+- 별도 앱이 없어 모바일에서 바로 확인이 힘듦
 
 ## 사용법
 
-| 기능 | 설명 |
-| :--| :--|
-| `<제목>:` | 카테고리를 정한다. 카테고리는 인덴트로 서브 카테고리를 정할 수 있으며, 아직 완료되지 않은 작업의 갯수도 보여준다. |
-| `CTRL`/`CMD`+`ENTER` | TODO를 만든다. |
-| `ALT`+`S` | TODO를 시작 상태로 변경한다. 체크박스가 마킹 되지 않는다. |
-| `ALT`+`D` | TODO를 완료 상태로 변경한다. 체크박스가 V자로 마킹된다. |
-| `ALT`+`C` | TODO를 취소 상태로 변경한다. 체크박스가 X자로 표시된다. |
-| `CTRL`/`CMD`+`SHIFT`+`ENTER` | TODO 리스트를 아카이빙한다. |
-| `@critical` | `critial` 레이블을 붙인다. 붉은색으로 표시됨 |
-| `@today` | `today` 레이블을 붙인다. 보라색으로 표시됨 |
-| `@high` | `high` 레이블을 붙인다. 주황색으로 표시됨 |
-| `@low` | `low` 레이블을 붙인다. 노란색으로 표시됨 |
+| 기능                          | 설명                                                                                    |
+| :--------------------------- | :------------------------------------------------------------------------------------- |
+| `<제목>:`                     | 카테고리를 정한다. 카테고리는 인덴트로 서브 카테고리를 정할 수 있으며, 아직 완료되지 않은 작업의 갯수도 보여준다. |
+| `CTRL`/`CMD`+`ENTER`         | TODO를 만든다.                                                                           |
+| `ALT`+`S`                    | TODO를 시작 상태로 변경한다. 체크박스가 마킹 되지 않는다.                                          |
+| `ALT`+`D`                    | TODO를 완료 상태로 변경한다. 체크박스가 V자로 마킹된다.                                            |
+| `ALT`+`C`                    | TODO를 취소 상태로 변경한다. 체크박스가 X자로 표시된다.                                            |
+| `CTRL`/`CMD`+`SHIFT`+`ENTER` | TODO 리스트를 아카이빙한다.                                                                  |
+| `@critical`                  | `critial` 레이블을 붙인다. 붉은색으로 표시됨                                                    |
+| `@today`                     | `today` 레이블을 붙인다. 보라색으로 표시됨                                                      |
+| `@high`                      | `high` 레이블을 붙인다. 주황색으로 표시됨                                                       |
+| `@low`                       | `low` 레이블을 붙인다. 노란색으로 표시됨                                                        |
 
 ## 진행도 표시
 

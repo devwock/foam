@@ -1,8 +1,5 @@
 ---
 title: JMeter 원격 테스트 설정
-summary: 
-categories:
-    - 
 tags:
     - server
     - jmeter
@@ -10,52 +7,41 @@ link:
 publish: true
 ---
 
-# JMeter Remote
+# JMeter 원격 테스트 설정
 
-## 환경
+## 개요
 
 로컬호스트 (MacOS, Jmeter GUI) -> AWS Bastion -> Jmeter Server (AWS LINUX)
 
-## Prerequisite
+주의: JDK 1.8.0으로 설치해야한다. 상위 버전에서는 JNI 오류가 발생한다.
+
+## 서버
 
 ### JDK 설치
 
-JDK 1.8.0으로 설치해야한다. 상위 버전에서는 JNI 오류가 발생한다.
-
-#### 서버
-
-```bash
+```shell
 # JDK 설치
 sudo su
 yum install java-1.8.0-openjdk
 exit
 ```
 
-#### MacOS
+### IP 허용
 
-```bash
-brew tap homebrew/cask-versions
-brew install temurin8
-```
+iptables 혹은 작업 그룹 설정
 
-### IP 허용 (서버)
-
-```bash
-sudu su
+```shell
 iptables -A INPUT -p udp -m udp --dport 1099 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 1099 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 50000 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 50000 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 51000 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 51000 -j ACCEPT
-exit
 ```
-
-## Jmeter Server 설정
 
 ### Jmeter 설치
 
-```bash
+```shell
 wget https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.3.zip
 unzip ./apache-jmeter-5.4.3.zip -d ./jmeter
 mv -f ./jmeter/apache-jmeter-5.4.3/* ./jmeter
@@ -64,7 +50,7 @@ rm -rf ./jmeter/apache-jmeter-5.4.3/
 
 ### jks 생성 (Optional)
 
-```bash
+```shell
 # 실행
 ~jmeter/bin/create-rmi-keystore.sh 
 
@@ -100,7 +86,7 @@ keytool -list -keystore rmi_keystore.jks
 
 `<JMETER_ROOT>/bin/jmeter.properties`
 
-```bash
+```shell
 server.rmi.localport=50000  # JMeter 서버 엔진 포트. 변경시 설정, 기본값은 4000, 사용 안하면 랜덤 포트 사용
 server.rmi.ssl.disable=true  # SSL 키를 사용하지 않으려면 설정
 # server.rmi.port=1099  # 서버 접근 포트. 기본값은 1099
@@ -112,7 +98,7 @@ server.rmi.ssl.disable=true  # SSL 키를 사용하지 않으려면 설정
 
 ### JMeter 서버 시작
 
-```bash
+```shell
 # 실행
 <JMETER_ROOT>/bin/jmeter-server
 
@@ -121,7 +107,14 @@ Using local port: 50000
 Created remote object: UnicastServerRef2 [liveRef: [endpoint:[<IP ADDRESS>:50000](local),objID:[-2cf0b695:17e52c766bc:-7fff, -7816885528712838043]]
 ```
 
-## JMeter Client 설정
+## 클라이언트
+
+### JDK (MacOS)
+
+```shell
+brew tap homebrew/cask-versions
+brew install temurin8
+```
 
 ### 포트 포워딩
 
@@ -133,7 +126,7 @@ Created remote object: UnicastServerRef2 [liveRef: [endpoint:[<IP ADDRESS>:50000
 
 `<JMETER_ROOT>/bin/jmeter.properties`
 
-```bash
+```shell
 remote_hosts=127.0.0.1:52000
 client.rmi.localport=51000
 server.rmi.ssl.disable=true
@@ -141,14 +134,20 @@ server.rmi.ssl.disable=true
 
 ### 환경 변수 설정
 
-```bash
+```shell
 export JVM_ARGS="-Djava.rmi.server.hostname=localhost"
 ```
 
 ### JMeter 실행
 
-```bash
+```shell
 <JMETER_ROOT>/bin/jmeter
+```
+
+터미널에서 실행 시 다음 명령어 사용
+
+```shell
+<JMETER_ROOT>/bin//jmeter -n -t <JMX FILE> -l <JTL FILE>
 ```
 
 ## SEE ALSO

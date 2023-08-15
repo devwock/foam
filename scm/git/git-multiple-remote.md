@@ -1,12 +1,10 @@
 ---
 title: Git Multiple Remote
-summary: 
-categories:
-    - 
 tags:
-    - scm
+    - git
 publish: true
 ---
+
 # Git Multiple Remote
 
 git에서 repo를 다른 리포지토리로 연결하는 방법

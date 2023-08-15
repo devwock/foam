@@ -1,19 +1,15 @@
 ---
-title: GnuPG 사용법
-summary: GnuPG 사용법
-categories:
-    - 
+title: GnuPG
 tags:
-    - software
-    - encrypt
-    - gnu
-link: 
+    - 프로그램
+links:
+    - https://www.gnupg.org/
 publish: true
 ---
 
 # GnuPG
 
-[GnuPG](https://www.gnupg.org)는 `RFC4880`를 구현한 `OpenPGP`의 Gnu 구현체로 컴퓨터 파일을 암호화하고 복호화 하는 프로그램이다.
+[GnuPG](https://www.gnupg.org/)는 `RFC4880`를 구현한 `OpenPGP`의 GNU 구현체로 컴퓨터 파일을 암호화하고 복호화 하는 프로그램이다.
 
 ## 키 생성
 

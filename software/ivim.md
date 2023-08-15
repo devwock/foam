@@ -1,25 +1,21 @@
 ---
 title: iVim
-summary: 
-categories:
-    - 
 tags:
-    - software
-    - ios
-    - vim
-link: https://github.com/terrychou/iVim
+    - 프로그램
+    - iOS
+links:
+    - https://github.com/terrychou/iVim
 publish: true
 ---
 
 # iVim
 
-## [iVim](https://github.com/terrychou/iVim)
+## 개
 
-[iVim](https://github.com/terrychou/iVim)은 iOS용 vim 앱 중 가장 평가가 좋고 가장 많이 사용하는 앱이다.
-
+`iVim`은 iOS용 vim 앱 중 가장 평가가 좋고 가장 많이 사용하는 앱이다.  
 앱 내 구매가 있긴 하지만, 이는 편집하다 앱 전환 해서 메모리가 날아갔을 때 복원해 주는 기능이고, 그 외에 어떠한 기능적 제약도 없다.
 
-다음 예제는 `iVim`에서 `.vimrc`를 만들고, `Pathogen`으로 플러그인을 설치하고, `Working Copy`로 git 연동하고, `vimwiki`를 사용한다.
+다음 예제는 `iVim`에서 `.vimrc`를 만들고, `Pathogen`으로 플러그인을 설치하고, `Working Copy`로 git 연동하고, `vimwiki`를 설치한다.
 
 ## `.vimrc` 생성
 
@@ -35,9 +31,7 @@ publish: true
 
 ### 개요
 
-iVim에서는 [iOS에 git 명령어가 없어 Vundle이나 vim-plug를 사용할 수 없다.](https://github.com/terrychou/iVim/issues/22)
-
-따라서 반 강제로 [Pathogen](https://github.com/tpope/vim-pathogen)을 사용해야 한다.
+iVim에서는 [iOS에 git 명령어가 없어 Vundle이나 vim-plug를 사용할 수 없기 때문에](https://github.com/terrychou/iVim/issues/22) 반 강제로 [Pathogen](https://github.com/tpope/vim-pathogen)을 사용해야 한다.
 
 ### 폴더 이름 변경
 
@@ -57,15 +51,12 @@ iOS에서 [pathgen.vim](https://github.com/tpope/vim-pathogen/blob/master/autolo
 
 ### `Pathogen` 복사
 
-우선 파일 앱에서 모든 zip 파일을 누르면 압축을 풀어 폴더로 만들어준다.
+<!-- ![플러그인 이동]({{ site.img }}/2020-03-05-ivim/5.png) -->
 
-파일 앱에서 `On My iPad/iVim/vim` 폴더에 `autoload`와 `bundle` 폴더를 생성한다.
-
-<!-- ![플로그인 이동]({{ site.img }}/2020-03-05-ivim/5.png) -->
-
-`pathogen.vim` 파일을 `iVim/vim/autoload` 폴더로 복사한다.
-
-나머지 플러그인 폴더들을 `iVim/vim/bundle` 폴더로 복사한다.
+1. 우선 파일 앱에서 모든 zip 파일을 누르면 압축을 풀어 폴더로 만들어준다.
+2. 파일 앱에서 `On My iPad/iVim/vim` 폴더에 `autoload`와 `bundle` 폴더를 생성한다.
+3. `pathogen.vim` 파일을 `iVim/vim/autoload` 폴더로 복사한다.
+4. 나머지 플러그인 폴더들을 `iVim/vim/bundle` 폴더로 복사한다.
 
 ### 폴더 이름 복원
 
@@ -126,9 +117,7 @@ iVim에서 작업한 결과물을 git으로 연동하는게 간단할 줄 알았
 
 ### iVim에서 사용할 수 있는 iOS 확장 기능들
 
-iOS의 기능을 사용할 수 있는 명령어들이다.
-
-자세한 설명은 [링크](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_commands.txt) 참조
+iOS의 기능을 사용할 수 있는 명령어들이다. 자세한 설명은 [링크](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_commands.txt) 참조
 
 #### [폰트](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_commands.txt#L18)
 
@@ -159,9 +148,7 @@ iOS의 기능을 사용할 수 있는 명령어들이다.
 
 ### iVim에서 사용할 수 있는 외부 커맨드
 
-iVim에서 사용할 수 있는 외부 커맨드들이다.
-
-자세한 설명은 [링크](https://github.com/terrychou/iVim/wiki/External-commands) 참조
+iVim에서 사용할 수 있는 외부 커맨드들이다. 자세한 설명은 [링크](https://github.com/terrychou/iVim/wiki/External-commands) 참조
 
 - [curl](https://github.com/terrychou/iVim/wiki/External-Command:-curl)
 - [python3](https://github.com/terrychou/iVim/wiki/External-Command:-python3)
@@ -173,9 +160,8 @@ iVim에서 사용할 수 있는 외부 커맨드들이다.
 
 별도의 인증서가 없을 땐 모질라에서 제공하는 인증서를 사용할 수 있다.
 
-다운로드: `curl -kOL https://curl.haxx.se/ca/cacert.pem`
-
-업데이트: `curl --remote-name --time-cond cacert.pem https://curl.haxx.se/ca/cacert.pem`
+- 다운로드: `curl -kOL https://curl.haxx.se/ca/cacert.pem`
+- 업데이트: `curl --remote-name --time-cond cacert.pem https://curl.haxx.se/ca/cacert.pem`
 
 #### [입출력](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_external_cmds.txt#L121)
 
@@ -200,21 +186,21 @@ iVim에서 사용할 수 있는 외부 커맨드들이다.
 
 #### [iVim에서 사용가능한 iOS 쉘 커맨드들](https://github.com/terrychou/iVim/blob/master/vim/runtime/doc/ios_shell_cmds)
 
-| - | - | - | - | - |
-| :--: | :--: | :--: | :--: | :--: |
-| awk | bc | cat | catimg | cd |
-| chflags | chksum | compress | cp | curl |
-| cut | date | dc | diff | dig |
-| du | echo | egrep | env | fgrep |
-| find | grep | gunzip | gzip | head |
-| host | ifconfig | ivish | link | ln |
-| ls | lua | luac | md5 | mkdir |
-| mv | nc | nslookup | open | openurl |
-| pbcopy | pbpaste | ping | printenv | pwd |
-| python3 | readlink | rlogin | rm | rmdir |
-| say | scp | sed | setenv | sftp |
-| sort | ssh | ssh-keygen | stat | sum |
-| tail | tar | tee | telnet | touch |
-| tr | uname | uncompress | uniq | unlink |
-| unsetenv | uptime | wc | whoami | whois |
-| xargs | - | - | - | - |
+|    -     |    -     |     -      |    -     |    -    |
+|:--------:|:--------:|:----------:|:--------:|:-------:|
+|   awk    |    bc    |    cat     |  catimg  |   cd    |
+| chflags  |  chksum  |  compress  |    cp    |  curl   |
+|   cut    |   date   |     dc     |   diff   |   dig   |
+|    du    |   echo   |   egrep    |   env    |  fgrep  |
+|   find   |   grep   |   gunzip   |   gzip   |  head   |
+|   host   | ifconfig |   ivish    |   link   |   ln    |
+|    ls    |   lua    |    luac    |   md5    |  mkdir  |
+|    mv    |    nc    |  nslookup  |   open   | openurl |
+|  pbcopy  | pbpaste  |    ping    | printenv |   pwd   |
+| python3  | readlink |   rlogin   |    rm    |  rmdir  |
+|   say    |   scp    |    sed     |  setenv  |  sftp   |
+|   sort   |   ssh    | ssh-keygen |   stat   |   sum   |
+|   tail   |   tar    |    tee     |  telnet  |  touch  |
+|    tr    |  uname   | uncompress |   uniq   | unlink  |
+| unsetenv |  uptime  |     wc     |  whoami  |  whois  |
+|  xargs   |    -     |     -      |    -     |    -    |

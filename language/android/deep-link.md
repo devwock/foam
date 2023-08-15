@@ -1,17 +1,12 @@
 ---
 title: 안드로이드 크롬 새 창 Deep link
-summary: 안드로이드 인 앱에서 크롬 새 창으로 URL 열기
-categories:
-    - 
 tags:
     - language
     - android
-links:
-    - 
 publish: true
 ---
 
-# Deep Link
+# 안드로이드 크롬 새 창 Deep Link
 
 안드로이드 인 앱에서 크롬 새 창으로 URL을 여는 url 스킴은 다음 두 개가 성공하였다.
 

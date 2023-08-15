@@ -1,38 +1,33 @@
 ---
-title: ASDF 설정
-summary: ASDF 및 direnv 설정법
-categories:
-    - 
+title: asdf
 tags:
-    - software
+    - 프로그램
     - 개발환경
-link: 
+links:
+    - https://asdf-vm.com/
 publish: true
 ---
 
-# ASDF
+# asdf
 
-asdf는 통합 개발 환경 버전 관리자이다. 내부에서는 각 언어별 버전 관리 매니저를 사용하기 때문에 비교적 안정적이다.
+[asdf](https://asdf-vm.com/)는 통합 개발 환경 버전 관리자이다. 내부에서는 각 언어별 버전 관리 매니저를 사용하기 때문에 비교적 안정적이다.
 
-## asdf 설치
+## 설치
 
 ```shell
 brew install asdf
 echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
 ```
 
-### direnv
+### [direnv](https://github.com/asdf-community/asdf-direnv)
 
-`direnv`는 해당 폴더에 진입했을 때 버전 관리 설정을 자동으로 해주는 프로그램이다.
+[direnv](https://github.com/asdf-community/asdf-direnv)는 해당 폴더에 진입했을 때 버전 관리 설정을 자동으로 해주는 프로그램으로 별도 응용 프로그램으로 존재하나 `asdf-direnv` 프로젝트로 asdf의 플러그인으로 설치할 수 있다.
 
 #### direnv 설치
 
 ```shell
 asdf plugin-add direnv
 asdf direnv setup --shell zsh --version latest
-# direnv를 golbal에서 사용하도록 변경
-# 아래 명령어가 없으면 No version is set for command direnv 오류 계속 발생함
-asdf global direnv latest
 ```
 
 ### 파이썬
@@ -41,17 +36,14 @@ asdf global direnv latest
 
 ```shell
 asdf plugin-add python
+asdf list all python
 asdf install python 3.10.10
 ```
-
-### 프로젝트 설정
-
-프로젝트 폴더를 생성하여 내부로 이동한다.
 
 #### 파이썬 버전 설정
 
 ```shell
-asdf direnv local python 3.8.16
+asdf direnv local python 3.10.10
 ```
 
 #### `.envrc` 편집

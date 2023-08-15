@@ -1,12 +1,7 @@
 ---
-title: Traefik 설정법
-summary: 
-categories:
-    - 
+title: Traefik
 tags:
     - server
-    - traefik
-link: 
 publish: true
 ---
 
@@ -14,10 +9,10 @@ publish: true
 
 ## 개요
 
-`traefik`은 과거에는 리버스 프록싱을 해주는 서비스를 의미했지만, 현재는 `traefiklabs`에서 여러 제품을 내놓았기 때문에 의미가 조금 달라졌다. 본문에서는 `traefik proxy`만을 다룬다.
+`Traefik`은 과거에는 리버스 프록싱을 해주는 서비스를 의미했지만, 현재는 `traefiklabs`에서 여러 제품을 내놓았기 때문에 의미가 조금 달라졌다. 본문에서는 `Traefik proxy`만을 다룬다.
 
-traefik은 리버스 프록싱을 해주는 서비스이다. 리버스 프록싱이란 특정 엔트리 포인트에 요청이 들어오면 내부 서버로 전달해주는 개념이다.  
-이는 아파치 웹 서버나 nginX로도 할 수 있지만, traefik은 다음과 같은 장점이 있다.
+Traefik은 리버스 프록싱을 해주는 서비스이다. 리버스 프록싱이란 특정 엔트리 포인트에 요청이 들어오면 내부 특정 서버로 전달해주는 역할을 한다.  
+이는 아파치 웹 서버나 NGINX로도 할 수 있지만, Traefik은 다음과 같은 장점이 있다.
 
 - 도커별 리버스 프록싱 자동 등록 (재시작 하지 않아도 됨)
 - 다양한 로드 밸런싱 알고리즘 지원
@@ -28,7 +23,7 @@ traefik은 리버스 프록싱을 해주는 서비스이다. 리버스 프록싱
 
 속도면에서는 [traefik 1.4에서 nginX와 비교 벤치마크하여 85%의 성능을 낸다고 공개한 적이 있다.](https://doc.traefik.io/traefik/v1.4/benchmarks/)
 
-## traefik 자체 설정
+## Traefik 자체 설정
 
 생각보다 매뉴얼이 직관적이지 않아 설정하는데 많이 헤맸다. 설정 파일은 `yaml`과 `toml` 중 선택할 수 있는데, 여기서는 toml로 진행한다.
 
@@ -87,7 +82,7 @@ traefik은 리버스 프록싱을 해주는 서비스이다. 리버스 프록싱
   [certificatesResolvers.myresolver.acme.tlsChallenge]
 ```
 
-`tlsChallenge`를 하는 이유는, `dnsChallenge`의 경우 Google domains 등 지원하지 않는 도메인 업체의 경우 (Google cloud DNS는 또 지원한다) 갱신을 매번 수동으로 해줘야하고, `httpChallenge`의 경우 80포트가 열려있어야 한다.
+`tlsChallenge`를 하는 이유는, `dnsChallenge`의 경우 Google domains 등 지원하지 않는 도메인 업체의 경우 (Google cloud DNS는 또 지원한다) 갱신을 매번 수동으로 해줘야하고, `httpChallenge`의 경우 80포트가 열려있어야 한다. 만일 제공하는 업체가 `dnsChallenge`를 지원할 경우 사용하면 훨씬 편하다.
 
 `docker-compose.yml`
 
@@ -179,6 +174,7 @@ networks:
 
 ## 트러블 슈팅
 
-- 리버스 프록싱 페이지가 404 page not found가 뜰 때
-  - trailing slash를 확인한다(test.com/test`/`). 슬래시가 없으면 페이지를 못찾는다.
-  - `traefik.http.middlewares.example.stripprefix.forceSlash=false` 설정으로 trailing slash를 제거할 수 있다.
+### 리버스 프록싱 페이지가 404 page not found가 뜰 때
+
+- trailing slash를 확인한다(test.com/test`/`). 슬래시가 없으면 traefik에서 페이지를 못찾는다.
+- `traefik.http.middlewares.example.stripprefix.forceSlash=false` 설정으로 trailing slash를 제거할 수 있다.
