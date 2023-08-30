@@ -46,6 +46,12 @@ python manage.py makemessages -l en
 python manage.py makemessages -a
 ```
 
+이후 컴파일 해야 장고가 사용할 수 있다.
+
+```shell
+python manage.py compilemessages
+```
+
 ## 사용
 
 국제화를 해야하는 텍스트에 다음과 같이 처리해주고, 위의 갱신 명령어를 쳐주면 자동으로 랭귀지 파일에 텍스트가 추가된다.
