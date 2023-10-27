@@ -23,11 +23,11 @@ FROM pg_database;
 
 ## Collation 추가
 
-한글 정렬을 위해선 `ko_KR.UTF-8` collation이 필요하다. 다음 SQL로 추가한다.
+한글 정렬을 위해선 `ko_KR.utf8` collation이 필요하다. 다음 SQL로 추가한다.
 
 ```sql
-CREATE COLLATION "ko_KR.UTF-8" (
-    LOCALE = 'ko_KR.UTF-8',
+CREATE COLLATION "ko_KR.utf8" (
+    LOCALE = 'ko_KR.utf8',
     PROVIDER = icu,
     DETERMINISTIC = true
 );
@@ -40,5 +40,5 @@ collation을 포함하여 쿼리를 하면 해당 테이블 collation이 다른 
 ```sql
 SELECT *
 FROM table
-ORDER_BY name COLLATE "ko_KR.UTF-8" ASC
+ORDER_BY name COLLATE "ko_KR.utf8" ASC
 ```
